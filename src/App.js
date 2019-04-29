@@ -1,21 +1,23 @@
 import React from 'react'
-import styled from 'styled-components'
 
-const Title = styled.h4`
-  padding-top: 20px;
-  padding-bottom: 30px;
-  opacity: 0.8;
-`
+import Destinations from 'components/Destinations'
+import ThemedVacations from 'components/ThemedVacations'
+import Itineraries from 'components/Itineraries'
 
-const SubTitle = styled.h5`
-
-`
+import {
+  Title
+} from 'components/UI'
 
 const App = () => {
   return (
     <div className='container xs-full-width'>
       <Title>Pickyourtrail sitemap</Title>
-      <SubTitle>Destinations</SubTitle>
+      {/* Destination Section - Show all destinations in alphabetical order */}
+      <Destinations />
+      {/* Themed Vacations Section - Show all themed vacations in alphabetical order */}
+      <ThemedVacations />
+      {/* Show all section -  */}
+      <Itineraries />
     </div>
   )
 }
