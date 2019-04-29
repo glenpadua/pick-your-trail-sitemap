@@ -1,9 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
 import { SubTitle } from 'components/UI'
 
-const Itineraries = (props) => {
+const Wrapper = styled.section`
+  padding-top: 50px
+`
+
+const Itineraries = ({ title }) => {
   return (
-    <SubTitle>Itineraries</SubTitle>
+    <Wrapper className='row'>
+      <SubTitle>{title}</SubTitle>
+    </Wrapper>
   )
 }
 

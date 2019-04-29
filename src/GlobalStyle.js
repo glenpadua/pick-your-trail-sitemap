@@ -72,8 +72,15 @@ const GlobalStyle = createGlobalStyle`
     cursor: help;
   }
 
-  a:active {
-    color: #e11d1a;
+  a {
+    color: #2c2f42;
+    opacity: 0.8;
+    text-decoration: none;
+  }
+
+  a:active, a:hover {
+    color: #1cad45;
+    text-decoration: none;
   }
 
 `
