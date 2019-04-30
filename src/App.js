@@ -27,6 +27,7 @@ const App = () => {
       <Section
         title='Themed Vacations'
         data={data.vacations}
+        normalize
       />
       {/* Show all section - All pages grouped by starting letter numerically and alphabetically */}
       <Itineraries

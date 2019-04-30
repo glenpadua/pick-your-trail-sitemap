@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { SubTitle } from 'components/UI'
-import { sortAlphabetically } from 'util/helpers'
+import { sortAlphabetically, normalizeText } from 'util/helpers'
 
 const Wrapper = styled.section`
   padding-top: 50px
@@ -31,7 +31,7 @@ const Item = ({ children, url, ...props }) => {
   )
 }
 
-const Section = ({ title, data }) => {
+const Section = ({ title, data, normalize }) => {
   return (
     <Wrapper>
       <div>
@@ -44,7 +44,7 @@ const Section = ({ title, data }) => {
             url={item.url}
             className='col-6 col-sm-4 col-md-3 col-lg-3'
           >
-            {item.text}
+            {normalize ? normalizeText(item.text) : item.text}
           </Item>
         )}
       </ItemsWrapper>

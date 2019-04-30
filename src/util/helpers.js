@@ -44,9 +44,14 @@ export const categoriseText = (data) => {
     // If number then add to 0-9 key
     if (!isNaN(firstChar)) {
       result['0-9'].push(item)
-    } else { // Else convert to lowercase and add to corresponding character key
+    } else { // Else add to corresponding character key
       result[firstChar.toLowerCase()].push(item)
     }
   })
   return result
+}
+
+// Return normalized text
+export const normalizeText = (text) => {
+  return text.toLowerCase().split('-').join(' ')
 }
