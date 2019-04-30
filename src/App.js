@@ -2,12 +2,10 @@ import React from 'react'
 
 import Section from 'components/Section'
 import Itineraries from 'components/Itineraries'
+import { Title } from 'components/UI'
+
 import data from 'data/sample.json'
 import { categoriseText } from 'util/helpers'
-
-import {
-  Title
-} from 'components/UI'
 
 // Initialize outside so does not cause unnecessary rerenders
 // Returns the itineraries organised by category 0-9 and alphabetically
@@ -20,11 +18,11 @@ const App = () => {
       {/* Destination Section - Show all destinations in alphabetical order */}
       <Section
         title='Destinations'
-        data={data.destinations}
+        data={data.destinations.filter(item => item.url.includes('/packages/'))} // Only main packages
       />
       {/* Themed Vacations Section - Show all themed vacations in alphabetical order */}
       <Section
-        title='Themed Vacations'
+        title='Themed vacations'
         data={data.vacations}
         normalize
       />

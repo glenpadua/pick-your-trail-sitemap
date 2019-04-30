@@ -1,4 +1,4 @@
-// Resets and FontFace
+// Resets and other global styles
 
 import { createGlobalStyle } from 'styled-components'
 
@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     color: #595c69;
-    opacity: 0.8;
+    opacity: 0.9;
     text-decoration: none;
   }
 

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -7,11 +8,14 @@ const Wrapper = styled.div`
 
 const CategoryName = styled.div`
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  font-size: 17px;
 `
 
 const CategoryItem = styled.a`
   padding-bottom: 15px;
+  opacity: 0.8;
+  font-size: 15px;
 `
 
 class Category extends Component {
@@ -42,12 +46,18 @@ class Category extends Component {
             <CategoryItem href={itinerary.url} target='_blank' rel='noopener noreferrer' className='col-12 col-md-5'>
               {itinerary.text}
             </CategoryItem>
+            {/* To add space under the category name in desktops */}
             {i % 2 ? <div className='col-md-2' /> : ''}
           </Fragment>
         )}
       </Wrapper>
     )
   }
+}
+
+Category.propTypes = {
+  name: PropTypes.string,
+  values: PropTypes.array
 }
 
 export default Category

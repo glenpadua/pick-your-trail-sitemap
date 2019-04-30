@@ -24,7 +24,8 @@ const Filters = styled.div`
 const FilterLink = styled.a`
   font-weight: bold;
   padding-right: 15px;
-  color: ${props => props.active ? '#1cad45' : ''}
+  color: ${props => props.active ? '#1cad45' : '#2c2f40'};
+  opacity: 1;
 `
 
 class Itineraries extends Component {
