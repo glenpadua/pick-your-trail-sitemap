@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Section from 'components/Section'
-import Itineraries from 'components/Itineraries'
+import { Section } from 'components/Section'
+import { Itineraries } from 'components/Itineraries'
 import { Title } from 'components/UI'
 
 import data from 'data/sample.json'
