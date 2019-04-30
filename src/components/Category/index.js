@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -36,11 +36,14 @@ class Category extends Component {
     const { name, values } = this.props
     return (
       <Wrapper className='row' ref={this.myRef}>
-        <CategoryName className='col-12'>{name.toUpperCase()}</CategoryName>
-        {values.map(itinerary =>
-          <CategoryItem href={itinerary.url} className='col-12'>
-            {itinerary.text}
-          </CategoryItem>
+        <CategoryName className='col-12 col-md-2'>{name.toUpperCase()}</CategoryName>
+        {values.map((itinerary, i) =>
+          <Fragment>
+            <CategoryItem key={i} href={itinerary.url} target='_blank' className='col-12 col-md-5'>
+              {itinerary.text}
+            </CategoryItem>
+            {i % 2 ? <div className='col-md-2' /> : ''}
+          </Fragment>
         )}
       </Wrapper>
     )

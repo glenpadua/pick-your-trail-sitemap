@@ -18,6 +18,7 @@ const Filters = styled.div`
   top: 0;
   background-color: white;
   z-index: 1;
+  justify-content: center;
 `
 
 const FilterLink = styled.a`
@@ -44,13 +45,14 @@ class Itineraries extends Component {
         <SubTitle>{title}</SubTitle>
         {/* List of all the filters */}
         <Filters>
-          {Object.keys(data).map(item =>
-            <FilterLink onClick={this.handleScroll(item)} key={item} href='#' style={{ paddingRight: '15px' }}>{item.toUpperCase()}</FilterLink>
+          {Object.keys(data).map(key =>
+            <FilterLink onClick={this.handleScroll(key)} key={key} href='#' style={{ paddingRight: '15px' }}>{key.toUpperCase()}</FilterLink>
           )}
         </Filters>
         {/* List of the categories */}
         {Object.keys(data).map(key =>
           <Category
+            key={key}
             id={key}
             name={key}
             values={data[key]}
