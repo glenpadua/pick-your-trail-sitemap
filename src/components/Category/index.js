@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  padding-top: 20px;
+  padding-top: 40px;
 `
 
 const CategoryName = styled.div`
@@ -21,7 +21,7 @@ class Category extends Component {
   }
 
   // Function to scroll
-  scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop)
+  scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop - 70)
 
   componentDidUpdate () {
     // When the parent scrollTo state changes it initiates a rerender

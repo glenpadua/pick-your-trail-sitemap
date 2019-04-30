@@ -24,6 +24,7 @@ const Filters = styled.div`
 const FilterLink = styled.a`
   font-weight: bold;
   padding-right: 15px;
+  color: ${props => props.active ? '#1cad45' : ''}
 `
 
 class Itineraries extends Component {
@@ -46,7 +47,7 @@ class Itineraries extends Component {
         {/* List of all the filters */}
         <Filters>
           {Object.keys(data).map(key =>
-            <FilterLink onClick={this.handleScroll(key)} key={key} href='#' style={{ paddingRight: '15px' }}>{key.toUpperCase()}</FilterLink>
+            <FilterLink onClick={this.handleScroll(key)} key={key} href='' active={this.state.scrollTo === key}>{key.toUpperCase()}</FilterLink>
           )}
         </Filters>
         {/* List of the categories */}
