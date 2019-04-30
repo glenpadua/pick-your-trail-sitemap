@@ -74,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #2c2f42;
+    color: #595c69;
     opacity: 0.8;
     text-decoration: none;
   }

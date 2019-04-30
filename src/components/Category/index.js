@@ -1,4 +1,18 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  padding-top: 20px;
+`
+
+const CategoryName = styled.div`
+  font-weight: bold;
+  padding-bottom: 10px;
+`
+
+const CategoryItem = styled.a`
+  padding-bottom: 15px;
+`
 
 class Category extends Component {
   constructor (props) {
@@ -14,7 +28,6 @@ class Category extends Component {
     // at which point the scroll function is called when the id matches
     // the scrollTo value
     if (this.props.id === this.props.scrollTo) {
-      console.log(this.props.scrollTo)
       this.scrollToMyRef()
     }
   }
@@ -22,14 +35,14 @@ class Category extends Component {
   render () {
     const { name, values } = this.props
     return (
-      <div className='row' ref={this.myRef}>
-        <div className='col-12'>{name.toUpperCase()}</div>
+      <Wrapper className='row' ref={this.myRef}>
+        <CategoryName className='col-12'>{name.toUpperCase()}</CategoryName>
         {values.map(itinerary =>
-          <a href={itinerary.url} className='col-12'>
+          <CategoryItem href={itinerary.url} className='col-12'>
             {itinerary.text}
-          </a>
+          </CategoryItem>
         )}
-      </div>
+      </Wrapper>
     )
   }
 }
