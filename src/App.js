@@ -10,14 +10,13 @@ import {
 } from 'components/UI'
 
 // Initialize outside so does not cause unnecessary rerenders
+// Returns the itineraries organised by category 0-9 and alphabetically
 let itineraries = categoriseText(data.itineraries)
 
 const App = () => {
   return (
     <div className='container'>
-      <div>
-        <Title>Pickyourtrail sitemap</Title>
-      </div>
+      <Title>Pickyourtrail sitemap</Title>
       {/* Destination Section - Show all destinations in alphabetical order */}
       <Section
         title='Destinations'

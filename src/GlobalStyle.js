@@ -1,26 +1,8 @@
 // Resets and FontFace
 
 import { createGlobalStyle } from 'styled-components'
-// import Barlow from './fonts/Barlow-Regular.ttf'
-// import BarlowSemiBold from './fonts/Barlow-SemiBold.ttf'
-// import BarlowExtraBold from './fonts/Barlow-ExtraBold.ttf'
 
 const GlobalStyle = createGlobalStyle`
-  ${'' /* @font-face {
-    font-family: 'Barlow';
-    src: url('${Barlow}') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'BarlowSemiBold';
-    src: url('${BarlowSemiBold}') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'BarlowExtraBold';
-    src: url('${BarlowExtraBold}') format('truetype');
-  } */}
-
   html, ul, ol, li, form, fieldset, legend
   {
     scroll-behavior: smooth;
@@ -83,6 +65,5 @@ const GlobalStyle = createGlobalStyle`
     color: #1cad45;
     text-decoration: none;
   }
-
 `
 export default GlobalStyle

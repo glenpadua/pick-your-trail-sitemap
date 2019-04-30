@@ -38,8 +38,8 @@ class Category extends Component {
       <Wrapper className='row' ref={this.myRef}>
         <CategoryName className='col-12 col-md-2'>{name.toUpperCase()}</CategoryName>
         {values.map((itinerary, i) =>
-          <Fragment>
-            <CategoryItem key={i} href={itinerary.url} target='_blank' className='col-12 col-md-5'>
+          <Fragment key={i}>
+            <CategoryItem href={itinerary.url} target='_blank' rel='noopener noreferrer' className='col-12 col-md-5'>
               {itinerary.text}
             </CategoryItem>
             {i % 2 ? <div className='col-md-2' /> : ''}
