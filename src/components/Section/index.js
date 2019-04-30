@@ -11,6 +11,8 @@ const ItemsWrapper = styled.ul`
   border-top: 1px dashed #ccc;
   list-style: none;
   padding-top: 9px;
+  margin-left: 0;
+  margin-right: 0;
 `
 
 const ListItem = styled.li`
@@ -32,7 +34,7 @@ const Item = ({ children, url, ...props }) => {
 const Section = ({ title, data }) => {
   return (
     <Wrapper>
-      <div className='row'>
+      <div>
         <SubTitle>{title}</SubTitle>
       </div>
       <ItemsWrapper className='row'>
