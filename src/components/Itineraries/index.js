@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { SubTitle } from 'components/UI'
 import Test from 'components/Test'
+import Category from 'components/Category'
 
 const Wrapper = styled.section`
   padding-top: 50px
@@ -18,6 +19,8 @@ class Itineraries extends Component {
     scrollTo: ''
   }
 
+  // Make the clicked category key the current
+  // scrollTo value
   handleScroll = (scrollTo) => (e) => {
     e.preventDefault()
     this.setState({ scrollTo })
@@ -36,7 +39,13 @@ class Itineraries extends Component {
             </div>
           )}
         </Filters>
-        {Object.keys(data).map(item =>
+        {Object.keys(data).map(key =>
+          <Category
+            id={key}
+            name={key}
+            values={data[key]}
+            scrollTo={this.state.scrollTo}
+          />
         )}
         <div>
           <a href='#' onClick={this.handleScroll('a')} >A</a>
@@ -44,8 +53,6 @@ class Itineraries extends Component {
         <div>
           <a href='#' onClick={this.handleScroll('b')}>B</a>
         </div>
-        <Test text='Lol' id='a' scrollTo={this.state.scrollTo} />
-        <Test text='Lol2' id='b' scrollTo={this.state.scrollTo} />
       </Wrapper>
     )
   }
